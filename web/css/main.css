@@ -1,0 +1,347 @@
+
+/*--------------------------------------------------*/
+/*************************      font                */
+/*--------------------------------------------------*/
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/Open_Sans/OpenSans-Regular.ttf");
+    src: url("../fonts/Open_Sans/OpenSans-Bold.ttf");
+    src: url("../fonts/Open_Sans/OpenSans-Italic.ttf");
+}
+
+@font-face {
+    font-family: 'Fredericka the Great';
+    src: url("../fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf");
+}
+
+/*--------------------------------------------------*/
+/*************************      colors              */
+/*--------------------------------------------------*/
+
+/*As Hex codes*/
+
+
+.color-primary-0 { color: #FDFDFD }	/* Main Primary color */
+.color-primary-1 { color: #B3B3B3 }
+.color-primary-2 { color: #747474 }
+.color-primary-3 { color: #4B4B4B }
+.color-primary-4 { color: #383838 }
+.color-primary-5 { color: #262626 }
+
+.color-complement-0 { color: #FFFFFF }  /* Main Complement color */
+.color-complement-1 { color: #FF6008 }
+.color-complement-2 { color: #E65000 }
+.color-complement-3 { color: #6C3C22 }
+
+
+/* As RGBa codes */
+
+.color-primary-0 { color: rgb(252, 252, 252) }	/* Main Primary color */
+.color-primary-1 { color: rgb(179, 179, 179) }
+.color-primary-2 { color: rgb(116, 116, 116) }
+.color-primary-3 { color: rgb(75, 75, 75) }
+.color-primary-4 { color: rgb(56, 56, 56) }
+.color-primary-5 { color: rgb(38, 38, 38) }
+
+.color-complement-0 { color: rgb(255, 255, 255) }  /* Main Complement color */
+.color-complement-1 { color: rgb(255, 96, 8) }
+.color-complement-2 { color: rgb(230, 80, 0) }
+.color-complement-3 { color: rgb(108, 60, 34) }
+
+/*--------------------------------------------------*/
+/*************************      general             */
+/*--------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    /*outline: none;*/
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #FDFDFD;
+    font-size: 1.2rem;
+    background: url("../img/backgrounds/car-repair-362150_1920.jpg") no-repeat top center fixed;
+    background-size: cover;
+    background-color: #262626;
+
+}
+
+main{
+    margin: 0 auto;
+    width: 100%;
+}
+
+h1{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 4rem;
+}
+h2{
+    font-size: 3rem;
+}
+
+li, a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+a:hover{
+    text-decoration: none;
+
+}
+
+/*--------------------------------------------------*/
+/*************************     header customer      */
+/*--------------------------------------------------*/
+
+#header_customer {
+    text-transform: uppercase;
+    background-color: #383838;
+    color: #FDFDFD;
+    padding: 10px;
+    font-size: 1.5rem;
+    box-shadow: 0 1px 16px rgba(0, 0, 0, .4);
+}
+
+/*----------------------------------------------------*/
+/*************************    contact  information    */
+/*----------------------------------------------------*/
+
+#information-contact{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #262626;
+    height: 40px;
+    border-bottom:  solid 2px #747474;
+    font-size: 1.5rem;
+}
+#information-contact p{
+    padding: 10px 10px;
+    border-right: black solid 1px;
+    border-left: black solid 1px;
+    background-color: #FF6008;
+}
+#information-contact p:hover{
+    padding: 0px 10px;
+    background-color: #E65000;
+}
+
+#center_information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+/*--------------------------------------------------*/
+/*************************      MainNav             */
+/*--------------------------------------------------*/
+
+#logo-lien, nav, li {
+    display: inline-block;
+}
+
+#logo {
+    width: 10rem;
+}
+
+#mainNav {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+#mainNav-content, #mainNav-left, #mainNav-rigth {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+#mainNav-button {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 30px;
+    vertical-align: top;
+    padding: 0;
+    line-height: 47px;
+    float: right;
+    margin-right: 32px;
+    color: #FDFDFD;
+}
+
+#mainNav-overlay {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+#mainNav-sidebar {
+    font-size: 2rem;
+
+    display: none;
+    position: fixed;
+    width: 84%;
+    z-index: 20;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #262626;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform .2s ease-out;
+}
+#mainNav-sidebar li {
+    display: block;
+}
+#mainNav-sidebar-header {
+    background: url(../img/backgrounds/garage-943249_1920.jpg) center;
+    background-size: cover;
+    height: 128px;
+}
+#mainNav-sidebar-body {
+    padding: 16px 8px;
+}
+#mainNav-sidebar-body li:before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+    margin-right: 16px;
+    width: 24px;
+    height: 24px;
+}
+#mainNav-sidebar-body .button, #mainNav-sidebar-footer .button {
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    float: none;
+    display: block;
+    height: auto;
+    line-height: inherit;
+    padding: 10px;
+}
+
+#mainNav nav {
+    /*
+    display: inline-block;
+    line-height: 48px;
+    vertical-align: top;
+    */
+}
+
+#mainNav li {
+    margin-left: 32px;
+}
+#mainNav li a {
+    color: #FDFDFD;
+}
+#mainNav li a:hover {
+    color: #E65000;
+}
+
+
+.button {
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 10px;
+    color: #262626;
+}
+.button_login {
+    background-color: #FDFDFD;
+}
+
+.button:hover{
+    border: solid 2px #E65000;
+}
+
+/*--------------------------------------------------*/
+/*************************      presentation        */
+/*--------------------------------------------------*/
+
+
+#home_main_title{
+    line-height: 8rem;
+    font-size: 8rem;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 12px #333333;
+    font-weight: 400;
+
+}
+
+.main_tilte{
+    margin: 10% 0;
+
+}
+.content_main{
+    background-color: rgba(75, 75, 75,0.95);
+    color: #FDFDFD;
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+}
+.text_right{
+    text-align: right;
+}
+.text_left{
+    text-align: left;
+}
+.container_customer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*--------------------------------------------------*/
+/*************************      Flexslider          */
+/*--------------------------------------------------*/
+
+.flexslider{
+    width: 50%;
+}
+
+
+/*--------------------------------------------------*/
+/*************************      Mobile view         */
+/*--------------------------------------------------*/
+
+
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+    }
+
+    #mainNav-content ,#mainNav-connexion{
+        display: none;
+    }
+
+    #mainNav-button, #mainNav-sidebar,
+    .mainNav-activated #mainNav-overlay {
+        display: block;
+    }
+
+    .mainNav-activated #mainNav-sidebar {
+        transform: translateX(0);
+    }
+}
