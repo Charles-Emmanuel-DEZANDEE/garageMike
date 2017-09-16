@@ -1,0 +1,71 @@
+<header id="header_customer">
+    <div id="information-contact">
+        <div class="left_information">
+            <p>infos gauches</p>
+        </div>
+        <div class="center_information">
+            <p>
+                <a href="tel:0629584310">
+                    <strong>Prendre rendez-vous :  </strong>06 29 58 43 10
+                </a>
+            </p>
+            <p>
+                <strong>Horaires :  </strong>Du lundi au samedi de 9h à 19h
+            </p>
+            <p>
+                <a href="mailto:contacts@mikeauto17.fr"><strong>Mail :  </strong> contacts@mikeauto17.fr</a>
+            </p>
+        </div>
+        <div class="right_information">
+            {% include 'inc/currencies.html.twig' %}
+            {{ generates_languages() | raw }}
+        </div>
+
+    </div>
+
+    <div id="mainNav">
+            {{ dump(app.session.get('currency')) }}
+        <div id="mainNav-left">
+            <div>
+                <h1><a href="{{ path('app.homepage.index') }}" id="logo-lien"><img id="logo" src="{{ asset('img/logo/logo_nb.png') }}" alt="mike auto 17"></a></h1>
+            </div>
+            <div id="mainNav-content">
+                <nav>
+                    <ul>
+                        <li><a href="#">Le concept</a></li>
+                        <li><a href="#">Prestations</a></li>
+                        <li><a href="#">Zone d'intervention</a></li>
+                        <li><a href="#">Conseils</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="mainNav-rigth">
+            <div id="mainNav-connexion">
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <p>
+                    <em>{{ 'nav.user.hello' | trans }} {{ app.user.username }}</em>
+                    <a href="{{ url('app.customer.homepage.index') }}" class="button button_login">{{ 'nav.user.account' | trans }}</a>
+                    <a href="{{ path('app.security.logout') }}" class="button button_login">{{ 'nav.user.logout' | trans }}</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app.admin.homepage.index') }}" class="button button_login">Retour admin</a>
+                    {% endif %}
+                </p>
+                {% else %}
+                <p>
+                    <a href="{{ path('app.account.signin') }}" class="button button_login">{{ 'nav.user.signin' | trans }}</a>
+                    <a href="{{ path('app.security.login') }}" class="button button_login">{{ 'nav.user.login' | trans }}</a>
+                </p>
+                {% endif %}
+            </div>
+            <button id="mainNav-button">&#9776;</button>
+        </div>
+        <div id="mainNav-sidebar">
+            <div id="mainNav-sidebar-header"></div>
+            <div id="mainNav-sidebar-body"></div>
+            <div id="mainNav-sidebar-footer"></div>
+        </div>
+        <div id="mainNav-overlay"></div>
+    </div>
+</header>

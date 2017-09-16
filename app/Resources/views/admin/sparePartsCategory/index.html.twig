@@ -1,0 +1,37 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+<main>
+    <h1>affichage</h1>
+<article>
+    <table>
+        <tr>
+            <th>{{ 'entity.spareparts.category.name' | trans | capitalize }}</th>
+            <th>{{ 'entity.spareparts.category.isAcitive' | trans | capitalize }}</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.translations[app.request.locale].name }}</td>
+                <td>{{ result.isActive == 1 ? '<span> class=" glyphicon glyphicon-ok"></span>' : '<span> class=" glyphicon glyphicon-remove"></span>' }}</td>
+                <td><a href="{{ url('app.admin.spare.parts.category.form.update', { 'id' : result.id }) }}">{{ 'button.update' | trans | capitalize }}</a></td>
+                <td><a href="{{ url('app.admin.spare.parts.category.delete', { 'id' : result.id }) }}">{{ 'button.delete' | trans | capitalize }}</a></td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+
+</article>
+
+
+
+
+</main>
+
+    </div>
+{% endblock %}
+
+

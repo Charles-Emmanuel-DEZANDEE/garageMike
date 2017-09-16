@@ -1,0 +1,26 @@
+content:
+    plural:
+        simple: 'One result | Many results'
+        complex: "{0} No result | {1} One result | [2, 5] Many result | ]5 , Inf] A lot of result"
+user:
+    username:
+        notblank: Username is empty
+    password:
+        notblank: Password is empty
+    email:
+        notblank: Email is empty
+        message: Email is invalid
+userAdress:
+    name:
+        notblank: Name's address is empty
+    main:
+        notblank: Main address is empty
+    street1:
+        notblank: street is empty
+    zipCode:
+        notblank: zipcode is empty
+    city:
+        notblank: city is empty
+    country:
+        notblank: country is empty
+

@@ -1,0 +1,19 @@
+{% extends 'basedev.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-sm-12">
+        {{ dump(brand) }}
+            <ul>
+                {% for car in brand.cars %}
+                <li><a href="{{ path('app.car.index', {slugcar : car.slug}) }}">{{ car.model }}</a></li>
+                    <li><img src="{{ asset('img/car/') }}{{ car.image }}" alt=""></li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+

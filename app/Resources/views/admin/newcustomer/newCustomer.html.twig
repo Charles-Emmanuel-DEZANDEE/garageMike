@@ -1,0 +1,22 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    {% include 'inc/googleMpa.html.twig' %}
+<main>
+    <article class="container">
+   <h1>inscription</h1>
+{% include 'inc/user.form.html.twig' %}
+    </article>
+
+
+</main>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaTebRSzl7xi-Ml4MHJIl7Z1h5k2A2Yv0&libraries=places&callback=initAutocomplete"
+            async defer></script>
+{% endblock %}
+
+

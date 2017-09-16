@@ -1,0 +1,267 @@
+{{ form_start(form,{'attr' : {'novalidate' : 'novalidate'} }) }}
+
+{#---------------------------- User  ---------------#}
+<div class="panel panel-default">
+    <div class="panel-heading"><h2>Client</h2></div>
+    <div class="panel-body">
+    {% if form.username is defined %}
+        <p>
+            {{ form_label(form.username, "entity.user.username"|trans) }}
+            {{ form_widget(form.username) }}
+        </p>
+    {% endif %}
+<div class="form-group row">
+
+        {% if form.civility is defined %}
+            <p class="col-sm-4">
+                {{ form_label(form.civility, "entity.user.civility"|trans) }}
+                {{ form_widget(form.civility) }}
+            </p>
+        {% endif %}
+
+        {% if form.firstName is defined %}
+            <p class="col-sm-4">
+                {{ form_label(form.firstName, "entity.user.firstName"|trans) }}
+                {{ form_widget(form.firstName, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+            </p>
+        {% endif %}
+
+        {% if form.lastName is defined %}
+            <p class="col-sm-4">
+                {{ form_label(form.lastName, "entity.user.lastName"|trans) }}
+                {{ form_widget(form.lastName, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+            </p>
+        {% endif %}
+</div>
+<div class="form-group row">
+
+    {% if form.phoneMain is defined %}
+        <p class="col-sm-3">
+            {{ form_label(form.phoneMain, "entity.user.phoneMain"|trans) }}
+            {{ form_widget(form.phoneMain, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+        </p>
+    {% endif %}
+
+    {% if form.phoneSecond is defined %}
+        <p class="col-sm-3">
+            {{ form_label(form.phoneSecond, "entity.user.phoneSecond"|trans) }}
+            {{ form_widget(form.phoneSecond, { 'attr': {'class': 'form-control'} }) }}
+        </p>
+    {% endif %}
+
+    {% if form.phoneThird is defined %}
+        <p class="col-sm-3">
+            {{ form_label(form.phoneThird, "entity.user.phoneThird"|trans) }}
+            {{ form_widget(form.phoneThird, { 'attr': {'class': 'form-control'} }) }}
+        </p>
+    {% endif %}
+
+    {% if form.fax is defined %}
+        <p class="col-sm-3">
+            {{ form_label(form.fax, "entity.user.fax"|trans) }}
+            {{ form_widget(form.fax, { 'attr': {'class': 'form-control'} }) }}
+        </p>
+    {% endif %}
+</div>
+
+    {% if form.password.first is defined %}
+        <p>
+            {{ form_label(form.password.first, "entity.user.password"|trans) }}
+            {{ form_widget(form.password.first, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+        </p>
+    {% endif %}
+
+    {% if form.password.second is defined %}
+        <p>
+            {{ form_label(form.password.second, "entity.user.passwordSecond"|trans) }}
+            {{ form_widget(form.password.second, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+        </p>
+    {% endif %}
+
+    {% if form.email is defined %}
+        <p class="form-horizontal">
+            {{ form_label(form.email, "entity.user.email"|trans) }}
+            {{ form_widget(form.email, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+        </p>
+    {% endif %}
+    </div>
+</div>
+
+
+
+{#---------------------------- Adress  ---------------#}
+<div class="panel panel-default">
+    <div class="panel-heading"><h2>Adresse</h2></div>
+    <div class="panel-body">
+
+
+    <div id="locationField" class="form-group">
+            <label for="autocomplete">Recherche Rapide:</label>
+            <input id="autocomplete" placeholder="Taper l'adresse ici" class="form-control"
+                   onFocus="geolocate()" type="text"></input>
+    </div>
+            {% if form.address.name is defined %}
+        <div class="form-group row">
+                <p class="col-sm-6">
+                    {{ form_label(form.address.name, "entity.userAdress.name"|trans) }}
+                    {{ form_widget(form.address.name, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+                </p>
+            {% endif %}
+
+            {% if form.address.main is defined %}
+                <p class="col-sm-6">
+                    {{ form_label(form.address.main, "entity.userAdress.main"|trans) }}
+                    {{ form_widget(form.address.main, { 'attr': {'placeholder': "entity.required"|trans, 'class' : 'form-control'} }) }}
+                </p>
+        </div>
+            {% endif %}
+        <div class="form-group row">
+
+            {% if form.address.numberStreet is defined %}
+                <p class="col-sm-2">
+                    {{ form_label(form.address.numberStreet, "entity.userAdress.numberStreet"|trans) }}
+                    {{ form_widget(form.address.numberStreet, { 'attr': {'class': 'street_number form-control'} }) }}
+                </p>
+            {% endif %}
+
+            </{% if form.address.street1 is defined %}
+                <p class="col-sm-5">
+                    {{ form_label(form.address.street1, "entity.userAdress.street1"|trans) }}
+                    {{ form_widget(form.address.street1, { 'attr': {'class': 'route form-control', 'placeholder': "entity.required"|trans} }) }}
+                </p>
+            {% endif %}
+
+            </{% if form.address.street2 is defined %}
+                <p class="col-sm-5">
+                    {{ form_label(form.address.street2, "entity.userAdress.street2"|trans) }}
+                    {{ form_widget(form.address.street2, { 'attr': {'class': 'form-control'} }) }}
+                </p>
+            {% endif %}
+        </div>
+
+            </{% if form.address.zipCode is defined %}
+                <p>
+                    {{ form_label(form.address.zipCode, "entity.userAdress.zipCode"|trans) }}
+                    {{ form_widget(form.address.zipCode, { 'attr': {'class': 'postal_code form-control'} }) }}
+                </p>
+            {% endif %}
+
+            </{% if form.address.city is defined %}
+                <p>
+                    {{ form_label(form.address.city, "entity.userAdress.city"|trans) }}
+                    {{ form_widget(form.address.city, { 'attr': {'class': 'locality form-control'} }) }}
+                </p>
+            {% endif %}
+
+            </{% if form.address.state is defined %}
+                <p>
+                    {{ form_label(form.address.state, "entity.userAdress.state"|trans) }}
+                    {{ form_widget(form.address.state, { 'attr': {'class': 'administrative_area_level_1 form-control'} }) }}
+                </p>
+            {% endif %}
+
+            {% if form.address.country is defined %}
+                <p>
+                    {{ form_label(form.address.country, "entity.userAdress.country"|trans ) }}
+                    {{ form_widget(form.address.country, { 'attr': {'class': 'country form-control'} }) }}
+                </p>
+            {% endif %}
+    </div>
+</div>
+
+
+{#---------------------------- Car  ---------------#}
+<div class="panel panel-default">
+    <div class="panel-heading"><h2>Véhicule</h2></div>
+    <div class="panel-body">
+        <div class="form-group row">
+
+{% if form.car.brand is defined %}
+    <p class="col-sm-6">
+        {{ form_label(form.car.brand, "entity.car.brand"|trans ) }}
+        {{ form_widget(form.car.brand) }}
+    </p>
+{% endif %}
+
+{% if form.car.model is defined %}
+    <p class="col-sm-6">
+        {{ form_label(form.car.model, "entity.car.model"|trans ) }}
+        {{ form_widget(form.car.model) }}
+    </p>
+{% endif %}
+        </div>
+        <div class="form-group row">
+
+{% if form.car.mileage is defined %}
+    <p class="col-sm-4">
+        {{ form_label(form.car.mileage, "entity.car.mileage"|trans ) }}
+        {{ form_widget(form.car.mileage) }}
+    </p>
+{% endif %}
+
+{% if form.car.registration is defined %}
+    <p class="col-sm-4">
+        {{ form_label(form.car.registration, "entity.car.registration"|trans ) }}
+        {{ form_widget(form.car.registration, { 'attr': {'class': 'select_brand'} }) }}
+    </p>
+{% endif %}
+
+{% if form.car.vehiculeIdentityNumber is defined %}
+    <p class="col-sm-4">
+        {{ form_label(form.car.vehiculeIdentityNumber, "entity.car.vehiculeIdentityNumber"|trans ) }}
+        {{ form_widget(form.car.vehiculeIdentityNumber, { 'attr': {'id': 'test'}}) }}
+    </p>
+{% endif %}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{#
+#######################   Messages d'erreurs ######################
+#}
+<p>
+{% if form.username is defined %}
+    {{ form_errors(form.username) }}
+{% endif %}
+{% if form.password.first is defined %}
+    {{ form_errors(form.password.first) }}
+{% endif %}
+{% if form.password.second is defined %}
+    {{ form_errors(form.password.second) }}
+{% endif %}
+{% if form.email is defined %}
+    {{ form_errors(form.email) }}
+{% endif %}
+{% if form.address.name is defined %}
+    {{ form_errors(form.address.name) }}
+{% endif %}
+{% if form.address.numberStreet is defined %}
+    {{ form_errors(form.address.numberStreet) }}
+{% endif %}
+{% if form.address.street1 is defined %}
+    {{ form_errors(form.address.street1) }}
+{% endif %}
+{% if form.address.street2 is defined %}
+    {{ form_errors(form.address.street2) }}
+{% endif %}
+{% if form.address.zipCode is defined %}
+    {{ form_errors(form.address.zipCode) }}
+{% endif %}
+{% if form.address.city is defined %}
+    {{ form_errors(form.address.city) }}
+{% endif %}
+{% if form.address.country is defined %}
+    {{ form_errors(form.address.country) }}
+{% endif %}
+</p>
+
+<p>
+    <input type="submit" name="Valider" class="btn btn-primary" value="Valider">
+</p>
+{{ form_end(form) }}
+
+

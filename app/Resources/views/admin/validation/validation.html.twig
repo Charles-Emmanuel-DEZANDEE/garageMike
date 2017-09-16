@@ -1,0 +1,164 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+    <h2>Récapitulatif de la commande</h2>
+    <section>
+        <h3>adresse de livraison</h3>
+        <ul>
+            <li>
+                <?= $customer["customer"]['customer_firstname']?> <?= $customer["customer"]['customer_lastname']?>
+            </li>
+            <li>
+                <?= $adresseDelivery["adress_street_1"]?>
+            </li>
+            <li>
+                <?= $adresseDelivery["adress_street_2"]?>
+            </li>
+            <li>
+                <?= $adresseDelivery["adress_zipcode"]?> <?= $adresseDelivery["adress_town"]?>
+            </li>
+        </ul>
+    </section>
+
+    <table class="generic-table meal-list recap-commande-table">
+        <caption>Vos choix</caption>
+        <tbody>
+        <?php foreach ($plats as $ligne => $plat) : ?>
+        <?php if ($plat['product_category'] == "entree"):?>
+        <?php foreach ($detailCommande as $ligne => $platCommandé) : ?>
+        <?php if ($platCommandé['id_product'] == $plat['id_product']):?>
+        <tr>
+            <td>
+                <p><?= $plat['product_name']?></p>
+            </td>
+            <td>
+                <img src="<?= $wwwUrl ?>/images/meals/<?= $plat["product_picture"]?>" alt="<?= $plat["product_name"]?>" />
+            </td>
+            <td>
+                <p><?= $plat["product_description"]?></p>
+            </td>
+            <td>
+                <p>X <?=$platCommandé["orderdetail_quantity_product"] ?></p>
+            </td>
+            <td>
+                <p>
+                    <em><?= ($platCommandé["orderdetail_quantity_product"])*($plat["product_public_price_ht"]*(1+($tva/100)))?> €</em>
+                </p>
+            </td>
+        </tr>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php foreach ($plats as $ligne => $plat) : ?>
+        <?php if ($plat['product_category'] == "plat"):?>
+        <?php foreach ($detailCommande as $ligne => $platCommandé) : ?>
+        <?php if ($platCommandé['id_product'] == $plat['id_product']):?>
+
+        <tr>
+            <td>
+                <p><?= $plat['product_name']?></p>
+            </td>
+            <td>
+                <img src="<?= $wwwUrl ?>/images/meals/<?= $plat["product_picture"]?>" alt="<?= $plat["product_name"]?>" />
+            </td>
+            <td>
+                <p><?= $plat["product_description"]?></p>
+            </td>
+            <td>
+                <p>X <?=$platCommandé["orderdetail_quantity_product"] ?></p>
+            </td>
+            <td>
+                <p>
+                    <em><?= ($platCommandé["orderdetail_quantity_product"])*($plat["product_public_price_ht"]*(1+($tva/100)))?> €</em>
+                </p>
+            </td>
+        </tr>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php foreach ($plats as $ligne => $plat) : ?>
+        <?php if ($plat['product_category'] == "dessert"):?>
+        <?php foreach ($detailCommande as $ligne => $platCommandé) : ?>
+        <?php if ($platCommandé['id_product'] == $plat['id_product']):?>
+
+        <tr>
+            <td>
+                <p><?= $plat['product_name']?></p>
+            </td>
+            <td>
+                <img src="<?= $wwwUrl ?>/images/meals/<?= $plat["product_picture"]?>" alt="<?= $plat["product_name"]?>" />
+            </td>
+            <td>
+                <p><?= $plat["product_description"]?></p>
+            </td>
+            <td>
+                <p>X <?=$platCommandé["orderdetail_quantity_product"] ?></p>
+            </td>
+
+            <td>
+                <p>
+                    <em><?= ($platCommandé["orderdetail_quantity_product"])*($plat["product_public_price_ht"]*(1+($tva/100)))?> €</em>
+                </p>
+            </td>
+        </tr>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php foreach ($plats as $ligne => $plat) : ?>
+        <?php if ($plat['product_category'] == "boisson"):?>
+        <?php foreach ($detailCommande as $ligne => $platCommandé) : ?>
+        <?php if ($platCommandé['id_product'] == $plat['id_product']):?>
+
+        <tr>
+            <td>
+                <p><?= $plat['product_name']?></p>
+            </td>
+            <td>
+                <img src="<?= $wwwUrl ?>/images/meals/<?= $plat["product_picture"]?>" alt="<?= $plat["product_name"]?>" />
+            </td>
+            <td>
+                <p><?= $plat["product_description"]?></p>
+            </td>
+            <td>
+                <p>X <?=$platCommandé["orderdetail_quantity_product"] ?></p>
+            </td>
+
+            <td>
+                <p>
+                    <em><?= ($platCommandé["orderdetail_quantity_product"])*($plat["product_public_price_ht"]*(1+($tva/100)))?> €</em>
+                </p>
+            </td>
+        </tr>
+        <?php endif;?>
+        <?php endforeach;?>
+        <?php endif;?>
+        <?php endforeach;?>
+        <tr>
+            <td>
+                Total
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                <p>
+                    <em><?= $Commande["order_total_price"]?> €</em>
+                </p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <button id="validpaiement"  type="submit" name="validpaiement" >payer</button>
+    <button id="annulerpaiement" type="reset" name="annulerpaiement" >Annuler</button>
+
+
+{% endblock %}

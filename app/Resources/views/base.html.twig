@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+{% block title %}Mike Auto 17{% endblock %}
+        </title>
+
+        <!-- Feuilles de styles de l'application -->
+        <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+
+{% block stylesheets %}{% endblock %}
+
+        <!-- Feuille de styles principale de l'application -->
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+
+{#
+        <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+#}
+
+
+
+
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/icons/logo_icon.png') }}" />
+    </head>
+
+    <body>
+        {% include 'inc/header.html.twig' %}
+
+
+        {% block body %}{% endblock %}
+
+        <!-- Librairie jQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+        <!-- JavaScript de l'application -->
+        <script src="{{ asset('js/classes/MainNav.class.js') }}"></script>
+        <script src="{{ asset('js/classes/Currencies.class.js') }}"></script>
+
+        <script src="{{ asset('js/main.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+
+
+    </body>
+</html>

@@ -1,0 +1,54 @@
+nav:
+    brand: par marque
+    user:
+        login: Connexion
+        logout: Déconnexion
+        account: Mon compte
+        hello: Bonjour
+        signin: S'inscrire
+entity:
+    required: obligatoire
+    user:
+        username: Nom d'utilisateur
+        password: Mot de pass
+        passwordSecond: Retaper le mot de pass
+        email: Mél
+        civility: Civilité
+        firstName: Prénom
+        lastName: Nom
+        phoneMain: Téléphone principal
+        phoneSecond: Téléphone secondaire
+        phoneThird: Téléphone tertiaire
+        fax: Fax
+        flashmessage:
+            add: Votre compte a été créé
+    userAdress:
+        name: Nom de l'adresse
+        main: Adresse principale
+        numberStreet: Numéro de rue
+        street1: Rue
+        street2: Complement d'adresse
+        zipCode: Code postal
+        city: Ville
+        state: région
+        country: Pays
+    car:
+        brand: Marque
+        model: Modéle
+        mileage: Kilométrage
+        registration: Plaque d'immatriculation
+        vehiculeIdentityNumber: VIN
+
+
+authentication:
+    success:
+        connection:
+            title: Connexion
+            content: Connecté en tant
+        ip:
+            content: Votre ip
+        updatePassword: Votre mot de passe à bien été mis à jour
+    failure:
+        passwordForgotten:
+            emailNoExit: Un mél vous a été envoyé
+            tokenExpired: Veuillez refaire une demande de mise à jour de mot de passe

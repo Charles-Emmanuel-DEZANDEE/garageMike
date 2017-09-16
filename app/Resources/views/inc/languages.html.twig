@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-sm-3 col-sm-offset-9 pull-right">
+        <p class="pull-right">
+            {% for key, value in routes %}
+                <a href="{{ value }}">{{ key }}</a>
+            {% endfor %}
+        </p>
+    </div>
+</div>

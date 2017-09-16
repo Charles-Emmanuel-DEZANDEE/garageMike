@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url('app.admin.homepage.index') }}">Mike auto 17</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="{{ url('app.homepage.index') }}">Site Client</a></li>
+            <li ><a href="{{ url('app.admin.new.customer') }}">Inscription client</a></li>
+            <li><a href="{{ url('app.admin.select.customer') }}">Base client</a></li>
+            <li><a href="#">Tableau de bord</a></li>
+            <li><a href="{{ url('app.admin.utils.index') }}">refresh currenties</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a href="{{ path('app.security.logout') }}"><span class="glyphicon glyphicon-log-out"></span> Se déconnecter</a></li>
+            {% else %}
+            <li><a href="{{ path('app.account.signin') }}"><span class="glyphicon glyphicon-user"></span> S'incrire</a></li>
+            <li><a href="{{ path('app.security.login') }}"><span class="glyphicon glyphicon-log-in"></span> Se connecter</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

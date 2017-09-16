@@ -1,0 +1,37 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+<main>
+    <h1>admin formulaire</h1>
+
+    {{ form_start(form,{'attr' : {'novalidate' : 'novalidate'} }) }}
+    <p>
+        {{ form_label(form.translations.name_fr, "entity.spareparts.category.name"|trans | capitalize) }}
+        {{ form_widget(form.translations.name_fr) }}
+    </p>
+    <p>
+        {{ form_label(form.translations.name_en, "entity.spareparts.category.name"|trans | capitalize) }}
+        {{ form_widget(form.translations.name_en) }}
+    </p>
+    <p>
+        {{ form_label(form.isActive, "entity.spareparts.category"|trans | capitalize) }}
+        {{ form_widget(form.isActive) }}
+    </p>
+    <p>
+        {{ form_errors(form.translations.name_fr) }}
+        {{ form_errors(form.translations.name_en) }}
+        {{ form_errors(form.isActive) }}
+    </p>
+
+    <p>
+        <input type="submit" name="Valider" class="btn btn-primary" value="Valider">
+    </p>
+    {{ form_end(form) }}
+
+
+</main>
+
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="col-sm-3 col-sm-offset-9 pull-right">
+        {% for currency in currencies %}
+            <a href="" class="link-currency" data-currency="{{ currency }}">{{ currency }}</a>
+        {% endfor %}
+    </div>
+</div>
+{#
+    {{ dump(currencies) }}
+#}

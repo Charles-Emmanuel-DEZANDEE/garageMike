@@ -1,0 +1,23 @@
+{% extends 'basedev.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="col-sm-12">
+{#
+        {{ dump(car) }}
+#}
+            <ul>
+                {% for spare in car.spareParts %}
+                <li>{{ spare.translations[app.request.locale].name }}</li>
+                    <li><img src="{{ asset('img/sparepart/') }}{{ spare.image }}" alt=""></li>
+                    <li>{{ calculate_price_from_currency(spare.price) | localizedcurrency(current_currency) }}</li>
+
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+

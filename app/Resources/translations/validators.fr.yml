@@ -1,0 +1,28 @@
+content:
+    plural:
+        simple: 'Il y a un résultat | Il y a plusieurs résultats'
+        complex: "{0} Il n'y a aucun résultats | {1} Il y a un résultat | [2, 5] Il y a plusieurs résultats | ]5 , Inf] Il y a plusierus résultats"
+user:
+    username:
+        notblank: Le nom d'utilisateur est vide
+    password:
+        notblank: Le mot de passe est vide
+    email:
+        notblank: L'email est vide
+        message: L'email est incorrect
+
+userAdress:
+    name:
+        notblank: Le nom de l'adresse est vide
+    main:
+        notblank: Main address is empty
+    street1:
+        notblank: La rue est vide
+    zipCode:
+        notblank: Le code postal est vide
+    city:
+        notblank: La ville est vide
+    country:
+        notblank: Le pays est vide
+
+

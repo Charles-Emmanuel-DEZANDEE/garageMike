@@ -1,0 +1,6 @@
+
+<ul>
+{% for brand in brands %}
+    <li><a href="{{ path('app.brand.index', { slugbrand : brand.slug}) }}">{{ brand.name | capitalize }}</a></li>
+{% endfor %}
+</ul>

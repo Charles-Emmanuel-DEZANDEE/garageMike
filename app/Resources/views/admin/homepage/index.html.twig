@@ -1,0 +1,27 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+<main>
+    <h1>admin</h1>
+    <article>
+
+        {% if is_granted('ROLE_ADMIN') %}
+        <p>Bonjour {{ app.user.username }}</p>
+        {% endif %}
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <p>Vous êtes bien connecté</p>
+        {% endif %}
+
+
+
+
+        {{ dump(app.session.get('authentication_failure_count')) }}
+    </article>
+
+</main>
+
+    </div>
+{% endblock %}
+
+

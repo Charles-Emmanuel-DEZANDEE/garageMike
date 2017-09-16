@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main>
+        <h1>acceuil client</h1>
+
+        {{ dump(user) }}
+        {{ dump(app.user) }}
+
+        <h2><a href="{{ url('app.customer.manager.update') }}">Enregistrer votre adresse</a></h2>
+
+        <h2><a href="{{ url('app.customer.manager.password') }}">mise à jour du mot de passe</a></h2>
+
+    </main>
+
+
+{% endblock %}
+
+

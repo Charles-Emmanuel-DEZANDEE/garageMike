@@ -1,0 +1,54 @@
+nav:
+    brand: by brand
+    user:
+        login: login
+        logout: logout
+        account: My account
+        hello: Hello
+        signin: sign in
+entity:
+    required: required
+    user:
+        username: username
+        password: password
+        passwordSecond: Repeat password
+        email: email
+        civility: Civility
+        firstName: First name
+        lastName: Last name
+        phoneMain: Main phone
+        phoneSecond: Second phone
+        phoneThird: Third phone
+        fax: Fax
+        flashmessage:
+                    add: account created
+    userAdress:
+        name: name's address
+        main: Main's address
+        numberStreet: number street
+        street1: street 1
+        street2: street 2
+        zipCode: zipcode
+        city: city
+        state: state
+        country: country
+
+    car:
+        brand: Brand
+        model: Model
+        mileage: Mileage
+        registration: Car registration
+        vehiculeIdentityNumber: Vehicule Identity Number
+
+authentication:
+    success:
+        connection:
+            title: Connection
+            content: connected as
+        ip:
+            content: your ip
+        updatePassword: Your password has been updated
+    failure:
+        passwordForgotten:
+            emailNoExit: An e-mail has been sent to you
+            tokenExpired: Please re-request a password update

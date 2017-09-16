@@ -1,0 +1,71 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+<h2>La commande</h2>
+<aside id="panier">
+    <h3><i class="fa fa-shopping-basket" aria-hidden="true"></i> Le panier</h3>
+    <ul>
+        <li>
+            <label for="order_status_delivery"> En livraison ?</label>
+            <select id="order_status_delivery" name="order_status_delivery">
+                <option value="true">Oui</option>
+                <option value="false">Non</option>
+            </select>
+        </li>
+        <li>
+            <label for="orderAdresse"> Adresse de livraison :</label>
+            <select id="orderAdresse" name="orderAdresse">
+                <?php foreach($adresses as $adress) : ?>
+                <option value="<?=$adresses["id_adress"]?>"><?=$adresses["adress_name"]?></option>
+                <?php endforeach; ?>
+            </select>
+        </li>
+        <li>
+            <label for="order_datetime_delivery">Date de livraison/a emporter:</label>
+            <input id="datetimepicker" class="order_datetime_delivery" type="text" name="order_datetime_delivery"   data-name="date de réservation" >
+        </li>
+    </ul>
+    <ul id="panier_ul">
+        <!-- <li>Cake aux carottes - nbre : 1 - 6€</li>
+        <button type="button" name="allErase" id="allErase" >Tout supprimer</button> -->
+    </ul>
+</aside>
+<table class="generic-table meal-list commande-table">
+    <caption>les entrées</caption>
+    <tbody>
+    <?php foreach ($plats as $ligne => $plat) : ?>
+    <?php if ($plat['product_category'] == "entree"):?>
+    <tr>
+        <td>
+            <p><?= $plat['product_name']?></p>
+        </td>
+        <td>
+            <img src="<?= $wwwUrl ?>/images/meals/<?= $plat["product_picture"]?>" alt="<?= $plat["product_name"]?>" />
+        </td>
+        <td>
+            <p><?= $plat["product_description"]?></p>
+        </td>
+        <td>
+            <p>
+                <em><?= ($plat["product_public_price_ht"]*(1+($tva/100)))?> €</em>
+            </p>
+        </td>
+        <td>
+            <select name="quantity_product" class="quantity_product">
+                <?php for ($i = 1; $i <= 10; $i++): ?>
+                <option value="<?=$i?>"><?=$i?></option>
+                <?php endfor; ?>
+            </select>
+
+        </td>
+        <td>
+            <button type="button" name="button" class="ajouterProduit" data-id="<?= $plat["id_product"]?>" data-name="<?= $plat['product_name']?>">ajouter</button>
+        </td>
+    </tr>
+    <?php endif;?>
+    <?php endforeach;?>
+    </tbody>
+</table>
+
+{% endblock %}

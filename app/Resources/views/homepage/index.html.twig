@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/flexslider.css') }}">
+
+{% endblock %}
+
+{% block body%}
+<section class="main_tilte">
+   <h1 id="home_main_title">Toute la mécanique automobile à domicile</h1>
+
+    <a href="#" class="link-ajax">test ajax</a>
+
+</section>
+<main class=" content_main">
+
+
+    <section>
+        <div class="container_customer">
+            <article class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="{{ asset('img/pictures/1495558916 (1).jpg') }}" alt="Photo de mécanique 1" />
+                        </li>
+                        <li>
+                            <img src="{{ asset('img/pictures/1495558916 (2).jpg') }}" alt="Photo de mécanique 1" />
+                        </li>
+                        <li>
+                            <img src="{{ asset('img/pictures/1495558916.jpg') }}" alt="Photo de mécanique 1" />
+                        </li>
+                        <li>
+                            <img src="{{ asset('img/pictures/1495558919.jpg') }}" alt="Photo de mécanique 1" />
+                        </li>
+                    </ul>
+                </div>
+            </article>
+            <article class="content">
+                <h2>Bienvenue chez Mike Auto 17 votre garagiste à domicile</h2>
+                <p>Particuliers, entreprises ne vous déplacez plus pour les réparations de vos véhicules !!</p>
+
+                <p>Pas le temps d'aller au garage? Qui va pouvoir vous ramener? Délais de réparations trop longs?</p>
+
+                <p>Mike Auto 17, le garagiste qui se déplace  directement à votre domicile ou sur votre lieu de travail du lundi au samedi sur rendez-vous de 9h à 19h sans interruption en Charente Maritime.</p>
+
+                <p>Fini la perte de temps, les mauvaises surprises, Mike Auto 17 ne réalise que les prestations que vous désirez, sous vos yeux avec en plus des explications et des conseils à chaque intervention.</p>
+
+                <p>Vous avez déjà vos pièces et vous cherchez quelqu'un pour vous les monter? Prenez rendez-vous avec Mike Auto 17 pour vous les monter.</p>
+
+                <p>Alors n'hésitez pas à prendre contact.</p>
+            </article>
+        </div>
+
+    </section>
+
+</main>
+
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {#
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    #}
+    <script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+
+
+    <script type="text/javascript">
+
+        $('.flexslider').flexslider({
+            directionNav: false,
+            controlNav: false
+        });
+
+    </script>
+
+    <script src="{{ asset('js/testAjax.js') }}"></script>
+{% endblock %}
+
+
+
