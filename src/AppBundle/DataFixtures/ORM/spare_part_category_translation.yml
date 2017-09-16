@@ -1,0 +1,9 @@
+AppBundle\Entity\SparePartCategoryTranslation:
+    spare_part_category_translation_fr{1..10}:
+        name: catégorie<current()>
+        locale: fr
+        translatable: '@main_spare_part_category<current()>'
+    spare_part_category_translation_en{1..10}:
+        name: category<current()>
+        locale: en
+        translatable: '@main_spare_part_category<current()>'

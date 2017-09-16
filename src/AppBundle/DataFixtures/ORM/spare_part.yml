@@ -1,0 +1,6 @@
+AppBundle\Entity\SparePart:
+    spare_part{1..100}:
+        price: <randomFloat(2, 30, 9999.99)>
+        cars: <numberBetween(1, 5)>x @car*
+        sparePartCategory: '@main_spare_part_category*'
+        image: <image('./web/img/sparepart', 200, 200, 'transport', false)>

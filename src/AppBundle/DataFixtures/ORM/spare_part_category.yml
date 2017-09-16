@@ -1,0 +1,3 @@
+AppBundle\Entity\SparePartCategory:
+    main_spare_part_category{1..10}:
+        isActive: 1

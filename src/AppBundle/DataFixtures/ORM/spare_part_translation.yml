@@ -1,0 +1,9 @@
+AppBundle\Entity\SparePartTranslation:
+    spare_part_translation_fr{1..100}:
+        name: piece détachée<current()>
+        locale: fr
+        translatable: '@spare_part<current()>'
+    spare_part_translation_en{1..100}:
+        name: spare part<current()>
+        locale: en
+        translatable: '@spare_part<current()>'
